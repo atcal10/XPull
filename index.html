@@ -1,177 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Emergency & News Feeds</title>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      margin: 0;
-      padding: 0;
-      transition: background 0.3s, color 0.3s;
-    }
-    :root {
-      --bg: #f4f4f4;
-      --text: #000;
-    }
-    .dark-mode {
-      --bg: #121212;
-      --text: #f4f4f4;
-    }
-    header {
-      background: #003366;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      position: relative;
-    }
-    .timestamp {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-    .toggle-darkmode {
-      position: absolute;
-      left: 1rem;
-      top: 1rem;
-      background: #fff;
-      color: #003366;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      background: #e0e0e0;
-    }
-    nav button {
-      background: none;
-      border: none;
-      padding: 1rem;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background 0.3s;
-    }
-    nav button:hover, nav button.active {
-      background: #c0c0c0;
-    }
-    .tab-content {
-      display: none;
-      padding: 20px;
-    }
-    .tab-content.active {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-      gap: 20px;
-    }
-    .feed {
-      background: white;
-      border-radius: 10px;
-      padding: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      max-height: 600px;
-      overflow: hidden;
-    }
-    .pinned {
-      grid-column: span 2;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Tweet Dashboard</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <button class="toggle-darkmode">🌓 Toggle Mode</button>
-    <h1>Live Emergency & News Feeds</h1>
-    <div class="timestamp" id="timestamp"></div>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header Section -->
+  <header class="bg-blue-700 text-white py-6 text-center">
+    <h1 class="text-3xl font-bold">Live Tweet Dashboard</h1>
+    <p class="text-lg">Stay updated with the latest tweets from key emergency, utility, and news sources.</p>
   </header>
-  <nav>
-    <button class="tab-button active" data-tab="safety">🚨 Public Safety</button>
-    <button class="tab-button" data-tab="weather">🌦️ Weather & Utilities</button>
-    <button class="tab-button" data-tab="news">📰 News</button>
-    <button class="tab-button" data-tab="other">ℹ️ Other Sources</button>
-  </nav>
 
-  <div id="safety" class="tab-content active">
-    <div class="feed pinned"><a class="twitter-timeline" href="https://twitter.com/BCSONM">🚓 BCSO - High Priority</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/ABQRAW">ABQ RAW</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NMStatePolice">NM State Police</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/FBIAlbuquerque">FBI Albuquerque</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/CitizenApp">Citizen App</a></div>
-  </div>
+  <!-- Main Grid Section -->
+  <main class="py-8 px-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      
+      <!-- Example for 1st Feed -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <a class="twitter-timeline" href="https://twitter.com/ABQRAW?ref_src=twsrc%5Etfw">Tweets by ABQRAW</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
 
-  <div id="weather" class="tab-content">
-    <div class="feed pinned"><a class="twitter-timeline" href="https://twitter.com/NWSAlbuquerque">NWS ABQ - Pinned</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NWSWPC">WPC</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NWSSPC">SPC</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NWStornado">NWS Tornado</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NOAASatellites">NOAA Satellites</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/PNMtalk">PNM</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/XcelEnergyNM">Xcel Energy NM</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/jemezcoop">Jemez Co-op</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NMDOT">NMDOT</a></div>
-  </div>
+      <!-- Example for 2nd Feed -->
+      <div class="bg-white rounded-lg shadow-md overflow-hidden">
+        <a class="twitter-timeline" href="https://twitter.com/BCSONM?ref_src=twsrc%5Etfw">Tweets by BCSONM</a>
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
 
-  <div id="news" class="tab-content">
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/KOB4">KOB4</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/krqe">KRQE</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/koat7news">KOAT</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/AP">AP</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/foxnewsalert">Fox News Alert</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/BBCBreaking">BBC Breaking</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/WSJ">WSJ</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/MSNBC">MSNBC</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/washingtonpost">WaPo</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/FoxNews">Fox News</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/nytimes">NY Times</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/BBCWorld">BBC World</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/cnnbrk">CNN Breaking</a></div>
-  </div>
+      <!-- Continue with other feeds... -->
 
-  <div id="other" class="tab-content">
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/PublicInforma14">Public Info 14</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/sandovalcounty">Sandoval County</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/NWS">NWS National</a></div>
-    <div class="feed"><a class="twitter-timeline" href="https://twitter.com/rawsalerts">Raws Alerts</a></div>
-  </div>
+    </div>
+  </main>
 
-  <script>
-    const buttons = document.querySelectorAll('.tab-button');
-    const tabs = document.querySelectorAll('.tab-content');
-
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        buttons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const tabId = button.getAttribute('data-tab');
-        tabs.forEach(tab => {
-          tab.classList.remove('active');
-          if (tab.id === tabId) {
-            tab.classList.add('active');
-          }
-        });
-      });
-    });
-
-    document.querySelector('.toggle-darkmode').addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    function updateTime() {
-      const now = new Date();
-      document.getElementById('timestamp').textContent = now.toLocaleString();
-    }
-
-    updateTime();
-    setInterval(updateTime, 60000);
-  </script>
 </body>
 </html>
