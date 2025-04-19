@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Live Tweet Dashboard</title>
-  <!-- Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Timelines</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your external CSS file -->
 </head>
-<body class="bg-gray-100 text-gray-900">
+<body>
+    <div class="twitter-grid">
+        <!-- Twitter Timeline 1 -->
+        <div class="twitter-grid-item">
+            <a class="twitter-timeline" href="https://twitter.com/NWSAlbuquerque?ref_src=twsrc%5Etfw">Tweets by NWSAlbuquerque</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
 
-  <!-- Header Section -->
-  <header class="bg-blue-700 text-white py-6 text-center">
-    <h1 class="text-3xl font-bold">Live Tweet Dashboard</h1>
-    <p class="text-lg">Stay updated with the latest tweets from key emergency, utility, and news sources.</p>
-  </header>
+        <!-- Twitter Timeline 2 -->
+        <div class="twitter-grid-item">
+            <a class="twitter-timeline" href="https://twitter.com/anotherTwitterHandle?ref_src=twsrc%5Etfw">Tweets by AnotherAccount</a>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
 
-  <!-- Main Grid Section -->
-  <main class="py-8 px-4">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      
-      <!-- Example for 1st Feed -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <a class="twitter-timeline" href="https://twitter.com/ABQRAW?ref_src=twsrc%5Etfw">Tweets by ABQRAW</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-
-      <!-- Example for 2nd Feed -->
-      <div class="bg-white rounded-lg shadow-md overflow-hidden">
-        <a class="twitter-timeline" href="https://twitter.com/BCSONM?ref_src=twsrc%5Etfw">Tweets by BCSONM</a>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-      </div>
-
-      <!-- Continue with other feeds... -->
-
+        <!-- Add more timeline widgets here as needed -->
     </div>
-  </main>
-
 </body>
 </html>
