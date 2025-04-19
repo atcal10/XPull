@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Emergency Feeds Dashboard</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 1rem;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+    }
+
+    .feed {
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Emergency & Government Feeds</h1>
+  <div class="grid-container">
+    <div class="feed">
+      <a class="twitter-timeline" data-height="500" href="https://twitter.com/FEMA">Tweets by FEMA</a>
+    </div>
+    <div class="feed">
+      <a class="twitter-timeline" data-height="500" href="https://twitter.com/ABQPOLICE">Tweets by ABQ Police</a>
+    </div>
+    <div class="feed">
+      <a class="twitter-timeline" data-height="500" href="https://twitter.com/NMFireInfo">Tweets by NM Fire Info</a>
+    </div>
+    <div class="feed">
+      <a class="twitter-timeline" data-height="500" href="https://twitter.com/NMDHSEM">Tweets by NMDHSEM</a>
+    </div>
+    <div class="feed">
+      <a class="twitter-timeline" data-height="500" href="https://twitter.com/PubServiceNM">Tweets by PNM</a>
+    </div>
+    <div class="feed">
+      <a class="twitter-timeline" data-height="500" href="https://twitter.com/NWSAlbuquerque">Tweets by NWS Albuquerque</a>
+    </div>
+  </div>
+
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>
